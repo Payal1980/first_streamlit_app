@@ -20,7 +20,7 @@ streamlit.header("Fruityvice Fruit Advice!")
 # streamlit.text(fruityvice_response.json())
 # get the json normalised form
 # fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-def get_fruity_vice_date(this_fruit_choice):
+def get_fruityvice_date(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
   fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
