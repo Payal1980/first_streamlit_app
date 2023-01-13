@@ -13,7 +13,6 @@ fruits_selected = streamlit.multiselect("Pick some fruits:",list(my_fruit_list.i
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the list on the page
 streamlit.dataframe(fruits_to_show)
-streamlit.stop()
 streamlit.header("Fruityvice Fruit Advice!")
 # fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 # streamlit.text(fruityvice_response.json())
@@ -25,6 +24,7 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write out the normalised data in the form of a table
 streamlit.dataframe(fruityvice_normalized)
+streamlit.stop()
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
