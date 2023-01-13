@@ -32,7 +32,7 @@ try:
     # write out the normalised data in the form of a table
     streamlit.dataframe(fruityvice_normalized)
     
-  except URLError as e:
+except URLError as e:
     streamlit.error()
 streamlit.stop()
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
